@@ -1,0 +1,11 @@
+-- 입양 간 기록은o, 보호소 들어온 기록x --
+-- OUTS 테이블엔 존재, INS 테이블엔 없는 --
+-- 동물ID, 이름 --
+SELECT OUTS.ANIMAL_ID, OUTS.NAME
+FROM ANIMAL_OUTS AS OUTS
+-- 조인 시작 --
+LEFT JOIN ANIMAL_INS AS INS
+    ON OUTS.ANIMAL_ID = INS.ANIMAL_ID
+WHERE INS.ANIMAL_ID IS NULL
+-- 동물ID 순으로 조회 --
+ORDER BY OUTS.ANIMAL_ID;
