@@ -1,0 +1,10 @@
+-- 이름, 쓰인 횟수 조회 --
+SELECT NAME, COUNT(*) AS COUNT
+FROM ANIMAL_INS
+-- 일단 이름으로 묶자 --
+GROUP BY NAME
+-- 두 번이상 쓰인(조건) --
+HAVING COUNT(NAME) >= 2
+-- 이름이 없는 동물 제외 --
+-- 이름 순으로 조회(정렬) --
+ORDER BY NAME
