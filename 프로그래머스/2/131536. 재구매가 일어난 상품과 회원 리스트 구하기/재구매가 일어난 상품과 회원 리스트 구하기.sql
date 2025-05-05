@@ -1,0 +1,8 @@
+-- ID, 상품 ID 출력 --
+SELECT USER_ID, PRODUCT_ID
+FROM ONLINE_SALE
+-- 재구매가 일어났다면 --
+GROUP BY USER_ID, PRODUCT_ID
+HAVING COUNT(*) >= 2
+-- 회원 ID 오름차순, 상품 ID 내림차순 --
+ORDER BY USER_ID, PRODUCT_ID DESC;
